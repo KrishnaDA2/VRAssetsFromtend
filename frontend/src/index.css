@@ -1,0 +1,282 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   GLOBAL FONT & LIGHT THEME
+======================================== */
+:root {
+  color-scheme: light;
+  font-size: 18px;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --page-bg: #f8fafc;
+  --surface: #ffffff;
+  --text-primary: #172033;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --primary-color: #4f46e5;
+}
+
+html {
+  font-size: 18px !important;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--page-bg);
+  color: var(--text-primary);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Consistent sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ========================================
+   TYPOGRAPHY
+======================================== */
+
+/* Main headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+  font-family: inherit;
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 2.5vw, 2.25rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 2vw, 1.85rem);
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+p {
+  line-height: 1.65;
+}
+
+/* Standard Tailwind text utilities */
+.text-xs {
+  font-size: 0.8rem !important;
+  line-height: 1.45 !important;
+}
+
+.text-sm {
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+}
+
+.text-base {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+}
+
+.text-lg {
+  font-size: 1.15rem !important;
+  line-height: 1.5 !important;
+}
+
+.text-xl {
+  font-size: 1.35rem !important;
+  line-height: 1.4 !important;
+}
+
+.text-2xl {
+  font-size: 1.65rem !important;
+  line-height: 1.35 !important;
+}
+
+.text-3xl {
+  font-size: 2rem !important;
+  line-height: 1.25 !important;
+}
+
+/* Improve readability of small labels */
+label,
+th {
+  font-weight: 600;
+}
+
+/* ========================================
+   DASHBOARD SURFACES
+======================================== */
+body {
+  background-color: var(--page-bg);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  color: var(--text-primary);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+/* Keep light backgrounds readable */
+.bg-white {
+  color: var(--text-primary);
+}
+
+.bg-white h1,
+.bg-white h2,
+.bg-white h3,
+.bg-white h4,
+.bg-white .text-white {
+  color: var(--text-primary) !important;
+}
+
+/* Avoid changing intentional white text on colored buttons */
+button.bg-indigo-600,
+button.bg-indigo-700,
+button.bg-blue-600,
+button.bg-blue-700,
+.bg-indigo-600,
+.bg-indigo-700,
+.bg-blue-600,
+.bg-blue-700 {
+  color: #ffffff;
+}
+
+/* ========================================
+   CARDS & PANELS
+======================================== */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+}
+
+.glow-indigo {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.18);
+}
+
+/* ========================================
+   TABLES
+======================================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+th {
+  color: #475569;
+  font-size: 0.85rem;
+}
+
+td {
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+tr {
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* ========================================
+   SCROLLBARS
+======================================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Canvas / 3D viewer */
+canvas {
+  outline: none;
+}
+
+/* Prevent media from overflowing */
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+@media (max-width: 1024px) {
+  :root,
+  html {
+    font-size: 17px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  :root,
+  html {
+    font-size: 16px !important;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  th,
+  td {
+    padding: 10px;
+  }
+}
